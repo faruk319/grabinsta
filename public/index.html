@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GrabInsta — Download public Instagram Reels, photos &amp; carousels</title>
+<meta name="description" content="Paste a public Instagram Reel or post link and get direct download links for each photo or video. No login. Public posts only.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#url-input">Skip to the link box</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <p class="brand" aria-label="GrabInsta home"><span class="brand-mark" aria-hidden="true">⬇</span> Grab<span>Insta</span></p>
+    <p class="header-note">Public posts only &middot; No login &middot; No watermark added</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" aria-labelledby="page-title">
+    <h1 id="page-title">Save a public Reel or post, in its original file.</h1>
+    <p class="lede">Paste an Instagram link. GrabInsta returns a download link for every photo and video in that post &mdash; one per carousel slide. Files open straight from Instagram&rsquo;s own servers, so nothing large passes through this site.</p>
+
+    <form id="resolve-form" class="resolver" novalidate>
+      <label class="field-label" for="url-input">Instagram link</label>
+      <div class="input-row">
+        <input id="url-input" name="url" type="url" inputmode="url" autocomplete="off" spellcheck="false"
+               placeholder="https://www.instagram.com/reel/…/ or /p/…/"
+               aria-describedby="input-hint" required>
+        <div class="input-actions">
+          <button type="button" id="paste-btn" class="btn btn-ghost">Paste</button>
+          <button type="button" id="clear-btn" class="btn btn-ghost" disabled>Clear</button>
+        </div>
+      </div>
+      <p id="input-hint" class="hint">Works with public Reels, single photos, single videos and carousels. Stories, private accounts and login-only posts are not supported.</p>
+      <p id="paste-hint" class="hint" hidden></p>
+
+      <button type="submit" id="submit-btn" class="btn btn-primary">
+        <span class="btn-label">Get download links</span>
+        <span class="spinner" aria-hidden="true" hidden></span>
+      </button>
+      <p class="kbd-hint">Tip: press <kbd>Enter</kbd> in the link box to fetch.</p>
+    </form>
+
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+  </section>
+
+  <section id="results" class="results" aria-labelledby="results-title" hidden>
+    <h2 id="results-title">Your media</h2>
+    <div id="owner-card" class="owner-card"></div>
+    <p id="caption" class="caption"></p>
+    <p class="save-note">Saving: tap <strong>Download</strong> &mdash; the file opens in a new tab from Instagram&rsquo;s server. In most browsers, long-press (mobile) or right-click (desktop) the opened file and choose <strong>Save</strong>. The download button does not force a save because the file lives on another site.</p>
+    <div id="media-grid" class="media-grid" role="list"></div>
+  </section>
+
+  <section class="how" aria-labelledby="how-title">
+    <h2 id="how-title">How it works</h2>
+    <ol class="steps">
+      <li><strong>Copy the link</strong> &mdash; in Instagram, tap &middot;&middot;&middot; on a public post or Reel, then Copy link.</li>
+      <li><strong>Paste it here</strong> and tap Get download links.</li>
+      <li><strong>Download each slide</strong> &mdash; carousels list every photo and video separately.</li>
+    </ol>
+    <h2>What it cannot do</h2>
+    <ul class="limits">
+      <li>Stories, private accounts and posts that need a login.</li>
+      <li>Audio extraction or video conversion &mdash; you get the file Instagram stored.</li>
+      <li>Guaranteed access: Instagram sometimes blocks server requests (you&rsquo;ll see an honest &ldquo;blocked&rdquo; message, not a fake link). Only download things you own or have permission to save, and respect the creator&rsquo;s rights.</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>GrabInsta is an independent tool. It is not affiliated with, endorsed by, or connected to Instagram or Meta. Instagram is a trademark of Meta Platforms, Inc.</p>
+    <p><a href="/healthz">Service status</a></p>
+  </div>
+</footer>
+
+<script src="/app.js" defer></script>
+</body>
+</html>
